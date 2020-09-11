@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from pages.main_page import MainPage
 
 
 
@@ -24,3 +23,7 @@ class LoginPage(BasePage):
         # реализуйте проверку, что есть форма регистрации на странице
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_FORM_ID), "Did not find REGISTRATION FORM"
     
+    def check_price_product_equals_price_basket(self):
+    	name_product = self.is_element_present(*LoginPageLocators.SELECTOR_CHECK_NAME_PRODUCT)
+    	name_basket_product = self.is_element_present(*LoginPageLocators.SELECTOR_CHECK_BASKET)
+    	print(name_product, name_basket_product)
